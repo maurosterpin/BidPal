@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3a0Eoi1fbL5nPdLICsJH2Z5rht1M1K/35fjhbfJA1brSJrAzLf065jobA07wU/Yxvj9It11Z549XFbX79v6SAA==",
+  "dgSpecHash": "1AdPLHUNSBcxQ9S/2/6LN+IZR/FbyTm7Cqkfpb3Cy/JCCLdqpkq6pD617bwkaxYI1ZkiXaUPqRiFcRCHcMaPvA==",
   "success": true,
-  "projectFilePath": "E:\\projects\\Carsties\\src\\AuctionService\\AuctionService.csproj",
+  "projectFilePath": "E:\\projects\\BidPal\\src\\AuctionService\\AuctionService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MAURO\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\MAURO\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

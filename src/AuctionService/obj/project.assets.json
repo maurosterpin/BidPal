@@ -1131,11 +1131,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\projects\\Carsties\\src\\AuctionService\\AuctionService.csproj",
+      "projectUniqueName": "E:\\projects\\BidPal\\src\\AuctionService\\AuctionService.csproj",
       "projectName": "AuctionService",
-      "projectPath": "E:\\projects\\Carsties\\src\\AuctionService\\AuctionService.csproj",
+      "projectPath": "E:\\projects\\BidPal\\src\\AuctionService\\AuctionService.csproj",
       "packagesPath": "C:\\Users\\MAURO\\.nuget\\packages\\",
-      "outputPath": "E:\\projects\\Carsties\\src\\AuctionService\\obj\\",
+      "outputPath": "E:\\projects\\BidPal\\src\\AuctionService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MAURO\\AppData\\Roaming\\NuGet\\NuGet.Config",
