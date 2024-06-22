@@ -44,3 +44,4 @@ E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\MassTransit.RabbitMqTrans
 E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\RabbitMQ.Client.dll
 E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\Contracts.dll
 E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\Contracts.pdb
+E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\MassTransit.EntityFrameworkCoreIntegration.dll
