@@ -1,4 +1,7 @@
+using System.Net;
 using MassTransit;
+using Polly;
+using Polly.Extensions.Http;
 using SearchService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,12 +9,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddHttpClient<AuctionSvcHttpClient>();
+builder.Services.AddHttpClient<AuctionSvcHttpClient>().AddPolicyHandler(GetPolicy());
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddMassTransit(x => {
+builder.Services.AddMassTransit(x =>
+{
     x.AddConsumersFromNamespaceContaining<AuctionCreatedConsumer>();
     x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter("search", false));
-    x.UsingRabbitMq((context, cfg) => {
+    x.UsingRabbitMq((context, cfg) =>
+    {
         cfg.ConfigureEndpoints(context);
     });
 });
@@ -24,14 +29,20 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-try
+app.Lifetime.ApplicationStarted.Register(async () =>
 {
-    await DbInitializer.InitDb(app);
-}
-catch (Exception e)
-{
-    Console.WriteLine(e);
-    throw;
-}
+    try
+    {
+        await DbInitializer.InitDb(app);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e);
+        throw;
+    }
+});
 
 app.Run();
+
+static IAsyncPolicy<HttpResponseMessage> GetPolicy() => HttpPolicyExtensions.HandleTransientHttpError()
+.WaitAndRetryForeverAsync(_ => TimeSpan.FromSeconds(3));
