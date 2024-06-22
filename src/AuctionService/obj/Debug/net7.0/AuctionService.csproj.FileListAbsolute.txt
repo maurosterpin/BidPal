@@ -38,3 +38,9 @@ E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\System.CodeDom.dll
 E:\projects\BidPal\src\AuctionService\obj\Debug\net7.0\AuctionService.csproj.AssemblyReference.cache
 E:\projects\BidPal\src\AuctionService\obj\Debug\net7.0\AuctionService.sourcelink.json
 E:\projects\BidPal\src\AuctionService\obj\Debug\net7.0\AuctionS.72D7E915.Up2Date
+E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\MassTransit.dll
+E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\MassTransit.Abstractions.dll
+E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\MassTransit.RabbitMqTransport.dll
+E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\RabbitMQ.Client.dll
+E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\Contracts.dll
+E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\Contracts.pdb
