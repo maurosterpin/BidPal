@@ -45,3 +45,10 @@ E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\RabbitMQ.Client.dll
 E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\Contracts.dll
 E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\Contracts.pdb
 E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\MassTransit.EntityFrameworkCoreIntegration.dll
+E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+E:\projects\BidPal\src\AuctionService\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll

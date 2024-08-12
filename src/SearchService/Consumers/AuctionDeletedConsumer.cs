@@ -18,8 +18,6 @@ public class AuctionDeletedConsumer : IConsumer<AuctionDeleted>
 
         var result = await DB.DeleteAsync<Item>(context.Message.Id);
 
-        await item.SaveAsync();
-
         if (!result.IsAcknowledged)
         {
             throw new MessageException(typeof(AuctionDeleted), "Problem deleting auction");

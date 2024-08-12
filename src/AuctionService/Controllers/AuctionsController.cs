@@ -74,7 +74,7 @@ public class AuctionsController : ControllerBase
     }
 
     [Authorize]
-    [HttpPost("{id}")]
+    [HttpPut("{id}")]
     public async Task<ActionResult> UpdateAuction(Guid id, UpdateAuctionDto updateAuctionDto)
     {
         var auction = await _context.Auctions.Include(x => x.Item)
@@ -107,7 +107,7 @@ public class AuctionsController : ControllerBase
 
         if (auction == null) return NotFound();
 
-        if (auction.Seller == User.Identity.Name) return Forbid();
+        if (auction.Seller != User.Identity.Name) return Forbid();
 
         _context.Auctions.Remove(auction);
 
