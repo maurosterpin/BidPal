@@ -9,6 +9,7 @@ import Filters from "./Filters";
 import { useParamsStore } from "@/hooks/useParamsStore";
 import { shallow } from "zustand/shallow";
 import qs from "query-string";
+import EmptyFilter from "../components/EmptyFilter";
 
 export default function Listings() {
   const [data, setData] = useState<PagedResult<Auction>>();
@@ -36,6 +37,8 @@ export default function Listings() {
   }, [url]);
 
   if (!data) return <h3>Loading...</h3>;
+
+  if (data.totalCount === 0) return <EmptyFilter showReset />;
 
   return (
     <>
