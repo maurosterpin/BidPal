@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./nav/Navbar";
+import * as Flowbite from "flowbite-react";
 
 export const metadata: Metadata = {
   title: "BidPal",
