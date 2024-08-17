@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
-import { BiShoppingBag } from "react-icons/bi";
+import { AiOutlineCar } from "react-icons/ai";
 
 export default function Logo() {
   const router = useRouter();
@@ -16,7 +16,7 @@ export default function Logo() {
       onClick={reset}
       className="flex items-center gap-2 text-3xl font-semibold text-blue-500 cursor-pointer"
     >
-      <BiShoppingBag size={34} />
+      <AiOutlineCar size={34} />
       <div>BidPal</div>
     </div>
   );
