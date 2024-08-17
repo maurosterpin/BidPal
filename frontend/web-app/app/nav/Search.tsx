@@ -32,7 +32,12 @@ export default function Search() {
         type="text"
         placeholder="Search for cars by make, model or color"
         className="
-                input-custom
+                bg-transparent
+                focus:outline-none
+                border-transparent
+                focus:border-transparent
+                focus:ring-0
+                flex-grow
                 text-sm
                 text-gray-600
             "
@@ -40,7 +45,7 @@ export default function Search() {
       <button onClick={search}>
         <FaSearch
           size={34}
-          className="bg-red-400 text-white rounded-full p-2 cursor-pointer mx-2"
+          className="bg-blue-400 text-white rounded-full p-2 cursor-pointer mx-2"
         />
       </button>
     </div>
