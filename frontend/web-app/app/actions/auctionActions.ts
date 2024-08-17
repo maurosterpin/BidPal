@@ -24,7 +24,7 @@ export async function UpdateAuctionTest() {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
-        Authorization: "Bearer" + token?.access_token,
+        Authorization: "Bearer " + token?.access_token,
       },
       body: JSON.stringify(data),
     }
