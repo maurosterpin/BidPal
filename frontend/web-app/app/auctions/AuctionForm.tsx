@@ -1,7 +1,7 @@
 "use client";
 
 import { Button, TextInput } from "flowbite-react";
-import React from "react";
+import React, { useEffect } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import Input from "../components/Input";
 
@@ -11,7 +11,11 @@ export default function AuctionForm() {
     handleSubmit,
     setFocus,
     formState: { isSubmitting, isValid, isDirty, errors },
-  } = useForm();
+  } = useForm({ mode: "onTouched" });
+  useEffect(() => {
+    setFocus("make");
+  }, [setFocus]);
+
   function onSubmit(data: FieldValues) {
     console.log(data);
   }
@@ -29,6 +33,50 @@ export default function AuctionForm() {
         control={control}
         rules={{ required: "Model is required" }}
       />
+      <Input
+        label="Color"
+        name="color"
+        control={control}
+        rules={{ required: "Color is required" }}
+      />
+      <div className="grid grid-cols-2 gap-3">
+        <Input
+          label="Year"
+          name="year"
+          control={control}
+          rules={{ required: "Year is required" }}
+          type="number"
+        />
+        <Input
+          label="Mileage"
+          name="mileage"
+          control={control}
+          rules={{ required: "Mileage is required" }}
+          type="number"
+        />
+      </div>
+      <Input
+        label="Image URL"
+        name="imageUrl"
+        control={control}
+        rules={{ required: "Image URL is required" }}
+      />
+      <div className="grid grid-cols-2 gap-3">
+        <Input
+          label="Reserve price"
+          name="reservePrice"
+          control={control}
+          rules={{ required: "Reserve price is required" }}
+          type="number"
+        />
+        <Input
+          label="Auction end date"
+          name="auctionEnd"
+          type="date"
+          control={control}
+          rules={{ required: "Auction end date is required" }}
+        />
+      </div>
       <div className="flex justify-between">
         <Button outline color="gray">
           Cancel
