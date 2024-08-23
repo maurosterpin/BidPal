@@ -93,7 +93,13 @@ export default function AuctionForm({ auction }: Props) {
         label="Image URL"
         name="imageUrl"
         control={control}
-        rules={{ required: "Image URL is required" }}
+        rules={{
+          required: "Image URL is required",
+          pattern: {
+            value: /^https:\/\/cdn\.pixabay\.com\//,
+            message: "Image URL must start with 'https://cdn.pixabay.com/'",
+          },
+        }}
       />
       <div className="grid grid-cols-2 gap-3">
         <Input

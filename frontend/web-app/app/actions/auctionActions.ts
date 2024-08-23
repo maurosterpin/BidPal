@@ -35,5 +35,5 @@ export async function updateAuction(data: FieldValues, id: string) {
 }
 
 export async function deleteAuction(id: string) {
-  return await fetchWrapper.del(`autctions/${id}`);
+  return await fetchWrapper.del(`auctions/${id}`);
 }
