@@ -4,6 +4,8 @@ import React from "react";
 import CountdownTimer from "../../CountdownTimer";
 import CarImage from "../../CarImage";
 import { getCurrentUser } from "@/app/actions/authActions";
+import EditButton from "./EditButton";
+import DeleteButton from "./DeleteButton";
 import DetailedSpecs from "./DetailedSpecs";
 
 export default async function Details({ params }: { params: { id: string } }) {
@@ -15,6 +17,12 @@ export default async function Details({ params }: { params: { id: string } }) {
       <div className="flex justify-between">
         <div className="flex items-center gap-3">
           <Heading title={`${data.make} ${data.model}`} />
+          {user?.username === data.seller && (
+            <>
+              <EditButton id={data.id} />
+              <DeleteButton id={data.id} />
+            </>
+          )}
         </div>
 
         <div className="flex gap-3">
