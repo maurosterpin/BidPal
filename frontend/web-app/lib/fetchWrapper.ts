@@ -57,7 +57,7 @@ async function handleResponse(response: Response) {
       message: response.statusText,
     };
 
-    return error;
+    return { error };
   }
 }
 
