@@ -13,11 +13,16 @@ public class BidsController : ControllerBase
 {
     private readonly IMapper _mapper;
     private readonly IPublishEndpoint _publishEndpoint;
-    private BidsController(IMapper mapper, IPublishEndpoint publishEndpoint)
+    private readonly GrpcAuctionClient _grpcClient;
+
+    public BidsController(IMapper mapper, IPublishEndpoint publishEndpoint,
+        GrpcAuctionClient grpcClient)
     {
         _mapper = mapper;
         _publishEndpoint = publishEndpoint;
+        _grpcClient = grpcClient;
     }
+
     [Authorize]
     [HttpPost]
     public async Task<ActionResult<BidDto>> PlaceBid(string auctionId, int amount)
@@ -26,8 +31,9 @@ public class BidsController : ControllerBase
 
         if (auction == null)
         {
-            // TODO
-            return BadRequest("Cannot accept bids on this auction at this time");
+            auction = _grpcClient.GetAuction(auctionId);
+
+            if (auction == null) return BadRequest("Cannot accept bids on this auction at this time");
         }
 
         if (auction.Seller == User.Identity.Name)
