@@ -2,6 +2,7 @@
 
 import { getBidsForAuction } from "@/app/actions/auctionActions";
 import Heading from "@/app/components/Heading";
+import { useBidStore } from "@/hooks/useBidsStore";
 import { Auction, Bid } from "@/types";
 import { User } from "next-auth";
 import React, { useEffect, useState } from "react";
@@ -9,7 +10,6 @@ import toast from "react-hot-toast";
 import BidItem from "./BidItem";
 import { numberWithCommas } from "@/lib/numberWithComma";
 import EmptyFilter from "@/app/components/EmptyFilter";
-import { useBidStore } from "@/hooks/useBidsStore";
 import BidForm from "./BidForm";
 
 type Props = {
