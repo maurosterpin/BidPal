@@ -10,6 +10,7 @@ import { getCurrentUser } from "@/app/actions/authActions";
 import EditButton from "./EditButton";
 import DeleteButton from "./DeleteButton";
 import DetailedSpecs from "./DetailedSpecs";
+import BidItem from "./BidItem";
 
 export default async function Details({ params }: { params: { id: string } }) {
   const data = await getDetailedViewData(params.id);
@@ -43,7 +44,7 @@ export default async function Details({ params }: { params: { id: string } }) {
 
       <div>
         {bids.map((bid) => (
-          <p key={bid.id}>{bid.bidder}</p>
+          <BidItem key={bid.id} bid={bid} />
         ))}
       </div>
 
