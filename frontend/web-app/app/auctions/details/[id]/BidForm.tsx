@@ -21,6 +21,7 @@ export default function BidForm({ auctionId, highBid }: Props) {
   const addBid = useBidStore((state) => state.addBid);
 
   function onSubmit(data: FieldValues) {
+    console.log("submit");
     if (data.amount <= highBid) {
       reset();
       return toast.error(
@@ -28,7 +29,7 @@ export default function BidForm({ auctionId, highBid }: Props) {
       );
     }
 
-    placeBidForAuction(auctionId, +data.amount)
+    placeBidForAuction(auctionId, data.amount)
       .then((bid) => {
         if (bid.error) throw bid.error;
         addBid(bid);

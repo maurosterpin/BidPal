@@ -10,12 +10,11 @@ import { getCurrentUser } from "@/app/actions/authActions";
 import EditButton from "./EditButton";
 import DeleteButton from "./DeleteButton";
 import DetailedSpecs from "./DetailedSpecs";
-import BidItem from "./BidItem";
+import BidList from "./BidList";
 
 export default async function Details({ params }: { params: { id: string } }) {
   const data = await getDetailedViewData(params.id);
   const user = await getCurrentUser();
-  const bids = await getBidsForAuction(params.id);
 
   return (
     <div>
@@ -40,12 +39,8 @@ export default async function Details({ params }: { params: { id: string } }) {
         <div className="w-full bg-gray-200 aspect-h-10 aspect-w-16 rounded-lg overflow-hidden">
           <CarImage imageUrl={data.imageUrl} make={data.make} />
         </div>
-      </div>
 
-      <div>
-        {bids.map((bid) => (
-          <BidItem key={bid.id} bid={bid} />
-        ))}
+        <BidList user={user} auction={data} />
       </div>
 
       <div className="mt-3 grid grid-cols-1 rounded-lg">
