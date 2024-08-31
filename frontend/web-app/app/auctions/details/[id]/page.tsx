@@ -1,4 +1,7 @@
-import { getDetailedViewData } from "@/app/actions/auctionActions";
+import {
+  getBidsForAuction,
+  getDetailedViewData,
+} from "@/app/actions/auctionActions";
 import Heading from "@/app/components/Heading";
 import React from "react";
 import CountdownTimer from "../../CountdownTimer";
@@ -11,6 +14,7 @@ import DetailedSpecs from "./DetailedSpecs";
 export default async function Details({ params }: { params: { id: string } }) {
   const data = await getDetailedViewData(params.id);
   const user = await getCurrentUser();
+  const bids = await getBidsForAuction(params.id);
 
   return (
     <div>
@@ -35,6 +39,12 @@ export default async function Details({ params }: { params: { id: string } }) {
         <div className="w-full bg-gray-200 aspect-h-10 aspect-w-16 rounded-lg overflow-hidden">
           <CarImage imageUrl={data.imageUrl} make={data.make} />
         </div>
+      </div>
+
+      <div>
+        {bids.map((bid) => (
+          <p key={bid.id}>{bid.bidder}</p>
+        ))}
       </div>
 
       <div className="mt-3 grid grid-cols-1 rounded-lg">
