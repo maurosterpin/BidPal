@@ -5,6 +5,7 @@ Bidpal aplikacija za bidding omogućuje korisnicima da sudjeluju u dražbama aut
 #### Upute za pokretanje
 Za pokrenuti backend aplikacije potrebno je imati docker i pozvati komandu:  
 - **docker compose up -d**  
+  
 Za pokrenuti frontend aplikacije potrebno je ući u frontend/web-app te pozvati komandu:
 - **npm run dev**  
 
